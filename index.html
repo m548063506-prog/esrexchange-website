@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESR Exchange | Sell Surplus IT Equipment</title>
+  <meta name="description" content="ESR Exchange helps companies sell surplus enterprise IT equipment, servers, RAM, GPUs, networking, storage, and data center liquidation lots." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="logo">ESR<span>Exchange</span></div>
-    <nav>
+    <a class="logo" href="#top">ESR<span>Exchange</span></a>
+    <button class="menu-btn" id="menuBtn">Menu</button>
+    <nav id="navMenu">
       <a href="#how">How It Works</a>
       <a href="#categories">Categories</a>
       <a href="#upload">Upload Inventory</a>
@@ -18,96 +20,109 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <p class="eyebrow">Enterprise IT Resale • Recovery • Recycling</p>
-      <h1>Turn surplus IT equipment into cash.</h1>
-      <p class="subtext">Upload your inventory list and ESR Exchange will review, categorize, value, and match your equipment with qualified buyers.</p>
-      <div class="hero-actions">
-        <a class="primary" href="#upload">Upload Inventory List</a>
-        <a class="secondary" href="#contact">Request a Call</a>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Enterprise IT Resale • Recovery • Recycling</p>
+        <h1>Turn surplus IT equipment into cash.</h1>
+        <p class="subtext">Upload your inventory list and ESR Exchange will review, categorize, value, and match your equipment with qualified buyers.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#upload">Upload Inventory List</a>
+          <a class="btn secondary" href="#contact">Request a Call</a>
+        </div>
+        <div class="chips">
+          <span>Servers</span><span>RAM</span><span>GPUs</span><span>Networking</span><span>Storage</span><span>Scrap</span>
+        </div>
       </div>
-      <div class="chips">
-        <span>Servers</span><span>RAM</span><span>GPUs</span><span>Networking</span><span>Storage</span><span>Scrap</span>
+      <div class="hero-card">
+        <h3>What sellers can upload</h3>
+        <ul>
+          <li>Excel or CSV inventory lists</li>
+          <li>Photos of pallets, racks, or equipment</li>
+          <li>Part numbers, quantities, and condition</li>
+          <li>Data center liquidation lots</li>
+        </ul>
+        <p>No need to create hundreds of listings manually. Send the list — we help do the rest.</p>
       </div>
-    </div>
-    <div class="hero-card">
-      <h3>What sellers can upload</h3>
-      <ul>
-        <li>Excel or CSV inventory lists</li>
-        <li>Photos of pallets, racks, or equipment</li>
-        <li>Part numbers, quantities, and condition</li>
-        <li>Data center liquidation lots</li>
-      </ul>
-      <p>No need to create hundreds of listings manually. Send the list — we help do the rest.</p>
-    </div>
-  </section>
+    </section>
 
-  <section class="stats">
-    <div><strong>Fast review</strong><span>Inventory checked by category</span></div>
-    <div><strong>B2B buyers</strong><span>Matched to qualified demand</span></div>
-    <div><strong>Secure process</strong><span>Brand-safe recovery options</span></div>
-  </section>
+    <section class="stats">
+      <div><strong>Fast review</strong><span>Inventory checked by category</span></div>
+      <div><strong>B2B buyers</strong><span>Matched to qualified demand</span></div>
+      <div><strong>Secure process</strong><span>Brand-safe recovery options</span></div>
+    </section>
 
-  <section id="how" class="section">
-    <h2>How ESR Exchange works</h2>
-    <div class="grid three">
-      <div class="card"><span class="num">1</span><h3>Upload</h3><p>Send inventory lists, photos, or liquidation details.</p></div>
-      <div class="card"><span class="num">2</span><h3>Review</h3><p>We categorize equipment and identify resale or recycling value.</p></div>
-      <div class="card"><span class="num">3</span><h3>Match</h3><p>We connect the lot with qualified buyers and recovery channels.</p></div>
-    </div>
-  </section>
+    <section id="how" class="section">
+      <h2>How ESR Exchange works</h2>
+      <div class="grid three">
+        <article><b>1</b><h3>Upload your list</h3><p>Send Excel, CSV, photos, or a description of your surplus IT equipment.</p></article>
+        <article><b>2</b><h3>We review and value</h3><p>We sort by category, part number, quantity, condition, and resale potential.</p></article>
+        <article><b>3</b><h3>We match buyers</h3><p>We connect your material with qualified buyers, brokers, recyclers, and exporters.</p></article>
+      </div>
+    </section>
 
-  <section id="categories" class="section alt">
-    <h2>Equipment categories</h2>
-    <div class="category-grid">
-      <div>Server Memory / DDR4 / DDR5</div><div>GPUs / AI Accelerators</div><div>Servers & Blades</div>
-      <div>Cisco / Juniper / Networking</div><div>Storage / SSD / HDD</div><div>Fiber / Infiniband / Cables</div>
-      <div>Telecom Equipment</div><div>Data Center Liquidations</div><div>Electronic Scrap</div>
-    </div>
-  </section>
+    <section id="categories" class="section alt">
+      <h2>Equipment categories</h2>
+      <div class="grid categories">
+        <div>Servers</div><div>DDR3 / DDR4 / DDR5 Memory</div><div>GPUs</div><div>Cisco & Networking</div><div>Storage / SSD / HDD</div><div>Telecom</div><div>Fiber & Infiniband Cables</div><div>Electronic Scrap</div>
+      </div>
+    </section>
 
-  <section id="upload" class="section upload-section">
-    <div>
-      <p class="eyebrow">Seller intake</p>
-      <h2>Upload your inventory</h2>
-      <p>Use this form to prepare your inventory submission. The next version will connect it to a live database and email notification system.</p>
-    </div>
-    <form id="inventoryForm" class="form-card">
-      <label>Company Name<input type="text" name="company" required></label>
-      <label>Contact Name<input type="text" name="name" required></label>
-      <label>Email<input type="email" name="email" required></label>
-      <label>Phone / WhatsApp<input type="tel" name="phone"></label>
-      <label>Inventory Type<select name="type"><option>Server Memory / RAM</option><option>GPUs / AI Hardware</option><option>Servers</option><option>Networking</option><option>Storage</option><option>Mixed IT Equipment</option><option>Scrap / Recycling</option></select></label>
-      <label>Estimated Quantity<input type="text" name="quantity" placeholder="Example: 400 pcs, 10 pallets, 2 racks"></label>
-      <label>Inventory Details<textarea name="details" rows="5" placeholder="Paste part numbers, brands, quantities, condition, location..."></textarea></label>
-      <label>Attach File<input type="file" name="file" accept=".csv,.xlsx,.xls,.pdf,.jpg,.png" /></label>
-      <button type="submit">Prepare Submission</button>
-      <p id="formMessage" class="form-message"></p>
-    </form>
-  </section>
+    <section id="upload" class="section upload-section">
+      <div>
+        <h2>Upload inventory for review</h2>
+        <p>This version makes every button work. Submissions open your email with the details filled in. The next step is adding a real backend so files go directly into a database.</p>
+      </div>
+      <form id="inventoryForm" class="form-card">
+        <label>Company Name <input name="company" required placeholder="Company name" /></label>
+        <label>Your Name <input name="name" required placeholder="Your name" /></label>
+        <label>Email <input name="email" type="email" required placeholder="email@company.com" /></label>
+        <label>Phone / WhatsApp <input name="phone" placeholder="Phone number" /></label>
+        <label>Inventory Category
+          <select name="category">
+            <option>Servers</option><option>Memory / RAM</option><option>GPUs</option><option>Networking</option><option>Storage</option><option>Electronic Scrap</option><option>Mixed Lot</option>
+          </select>
+        </label>
+        <label>Inventory Details <textarea name="details" rows="6" placeholder="Paste part numbers, quantities, condition, location, and notes here."></textarea></label>
+        <label class="file-box">Inventory File
+          <input name="file" type="file" accept=".xls,.xlsx,.csv,.pdf,.jpg,.jpeg,.png" />
+          <small>Current version cannot attach files automatically. After your email opens, attach the file manually.</small>
+        </label>
+        <button class="btn primary" type="submit">Send Inventory to ESR</button>
+        <p id="inventoryNote" class="note"></p>
+      </form>
+    </section>
 
-  <section id="buyers" class="section alt">
-    <h2>Buyer matching dashboard preview</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Category</th><th>Typical Demand</th><th>Best Route</th></tr></thead>
-        <tbody>
-          <tr><td>DDR4 / DDR5 RAM</td><td>High for tested enterprise modules</td><td>Wholesale resale</td></tr>
-          <tr><td>GPUs / AI Cards</td><td>High when export-compliant</td><td>Qualified buyer review</td></tr>
-          <tr><td>Servers</td><td>Depends on generation/spec</td><td>Part out or resale</td></tr>
-          <tr><td>Networking</td><td>Strong for Cisco, Juniper, Mellanox</td><td>Broker network</td></tr>
-          <tr><td>Scrap / Mixed Lots</td><td>Depends on recovery value</td><td>ESR recycling channel</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <section id="buyers" class="section alt">
+      <h2>Buyer match</h2>
+      <p class="wide">Tell us what you buy, and ESR Exchange will match you with available enterprise IT lots.</p>
+      <form id="buyerForm" class="form-card compact">
+        <label>Company Name <input name="company" required placeholder="Buyer company" /></label>
+        <label>Buyer Name <input name="name" required placeholder="Your name" /></label>
+        <label>Email <input name="email" type="email" required placeholder="email@company.com" /></label>
+        <label>What are you buying?
+          <select name="buying">
+            <option>Servers</option><option>Memory / RAM</option><option>GPUs</option><option>Cisco / Networking</option><option>Storage</option><option>Mixed IT Lots</option><option>Scrap</option>
+          </select>
+        </label>
+        <label>Buying Notes <textarea name="notes" rows="5" placeholder="Brands, models, quantities, target price, location, export needs."></textarea></label>
+        <button class="btn primary" type="submit">Request Buyer Match</button>
+        <p id="buyerNote" class="note"></p>
+      </form>
+    </section>
 
-  <section id="contact" class="section contact">
-    <h2>Ready to sell surplus IT equipment?</h2>
-    <p>Send us your inventory list and we will review it for resale, recovery, or recycling value.</p>
-    <a class="primary" href="mailto:sales@esrexchange.com?subject=Inventory%20Submission%20for%20ESR%20Exchange">Email Inventory</a>
-  </section>
+    <section id="contact" class="section contact">
+      <h2>Contact ESR Exchange</h2>
+      <p>Have a lot ready now? Send the inventory list and pictures for review.</p>
+      <form id="contactForm" class="form-card compact">
+        <label>Name <input name="name" required placeholder="Your name" /></label>
+        <label>Email <input name="email" type="email" required placeholder="email@company.com" /></label>
+        <label>Message <textarea name="message" rows="5" required placeholder="How can ESR Exchange help?"></textarea></label>
+        <button class="btn primary" type="submit">Send Contact Request</button>
+        <p id="contactNote" class="note"></p>
+      </form>
+    </section>
+  </main>
 
   <footer>© 2026 ESR Exchange. Enterprise IT resale, recovery, and recycling.</footer>
   <script src="script.js"></script>
