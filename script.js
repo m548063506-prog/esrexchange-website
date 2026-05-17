@@ -1,19 +1,12 @@
-document.getElementById('inventoryForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const subject = encodeURIComponent('Inventory Submission for ESR Exchange');
-  const body = encodeURIComponent(
-    `Company: ${data.get('company') || ''}\n` +
-    `Contact: ${data.get('name') || ''}\n` +
-    `Email: ${data.get('email') || ''}\n` +
-    `Phone: ${data.get('phone') || ''}\n` +
-    `Inventory Type: ${data.get('type') || ''}\n` +
-    `Location: ${data.get('location') || ''}\n\n` +
-    `Inventory Details:\n${data.get('details') || ''}\n\n` +
-    `Note: Please attach your Excel, CSV, PDF, or photos to this email before sending.`
-  );
-  const mailto = `mailto:sales@esrexchange.com?subject=${subject}&body=${body}`;
-  const result = document.getElementById('formResult');
-  result.innerHTML = `Submission prepared. <a href="${mailto}">Click here to open your email</a>. Attach your file before sending.`;
-  window.location.href = mailto;
+document.getElementById('inventoryForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(e.target);
+  const lines = [];
+  for (const [key, value] of data.entries()) {
+    if (value && typeof value === 'string') lines.push(`${key}: ${value}`);
+  }
+  const body = encodeURIComponent(lines.join('\n'));
+  const subject = encodeURIComponent('New Inventory Submission - ESR Exchange');
+  document.getElementById('formMessage').textContent = 'Submission prepared. Your email program should open now.';
+  window.location.href = `mailto:sales@esrexchange.com?subject=${subject}&body=${body}`;
 });
