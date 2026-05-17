@@ -1,0 +1,9 @@
+<svg width="520" height="120" viewBox="0 0 520 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(10,10)">
+    <circle cx="50" cy="50" r="44" fill="#E9FFF8" stroke="#06796E" stroke-width="6"/>
+    <path d="M25 38H66L56 28L64 20L88 44L64 68L56 60L66 50H25V38Z" fill="#06796E"/>
+    <path d="M75 62H34L44 72L36 80L12 56L36 32L44 40L34 50H75V62Z" fill="#10A58F" opacity="0.78"/>
+  </g>
+  <text x="125" y="55" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="800" fill="#102025">ESR</text>
+  <text x="125" y="95" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#06796E">Exchange</text>
+</svg>
