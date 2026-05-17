@@ -1,14 +1,14 @@
-# ESR Exchange Website
+# ESR Exchange Website V2
 
-First static website for ESREXCHANGE.com.
+Updated seller-attraction website for ESR Exchange.
 
-## Deploy to Vercel
-1. Create a new GitHub repository named `esrexchange-website`.
-2. Upload these files: `index.html`, `styles.css`, and `README.md`.
-3. Go to Vercel > New Project.
-4. Import the GitHub repository.
-5. Click Deploy.
-6. Add domain: `esrexchange.com`.
+## Files
+- index.html
+- styles.css
+- script.js
 
-## Important
-The current contact email in the form is `sales@esrexchange.com`. Change it later if needed.
+## Deploy Update
+Upload these files to the existing GitHub repository `esrexchange-website` and commit changes. Vercel will automatically redeploy the website.
+
+## Current Form Behavior
+The inventory form prepares an email to sales@esrexchange.com. The next phase should connect real file upload, database storage, and admin dashboard.
