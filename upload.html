@@ -1,136 +1,58 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Upload Inventory | ESR Exchange</title>
-<link rel="stylesheet" href="styles.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESR Exchange - Upload Inventory</title>
 <style>
-.short-upload-top{
-background:#0d6a61;
-color:#fff;
-padding:24px 6%;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7f6;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
-
-.short-upload-top h1{
-margin:0;
-font-size:34px;
+.container{
+    background:white;
+    padding:60px;
+    border-radius:16px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    max-width:600px;
 }
-
-.short-upload-top p{
-margin:10px 0 0;
-font-size:16px;
-max-width:700px;
-line-height:1.4;
+h1{
+    color:#0f172a;
+    margin-bottom:15px;
 }
-
-.short-upload-wrap{
-padding:18px 5% 35px;
-background:#f4f0e6;
+p{
+    color:#475569;
+    margin-bottom:35px;
+    font-size:18px;
 }
-
-.short-upload-card{
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 35px rgba(0,0,0,.10);
-max-width:1000px;
-margin:auto;
+.button{
+    background:#0f766e;
+    color:white;
+    padding:18px 40px;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:22px;
+    font-weight:bold;
+    display:inline-block;
 }
-
-.short-top-bar{
-padding:14px 18px;
-background:#fffaf0;
-border-bottom:1px solid #e4d8c5;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.short-top-bar strong{
-font-size:20px;
-}
-
-.secure{
-background:#06796e;
-color:#fff;
-padding:7px 11px;
-border-radius:999px;
-font-size:12px;
-font-weight:900;
-}
-
-.short-jot{
-width:100%;
-height:680px;
-border:0;
-display:block;
-}
-
-@media(max-width:900px){
-.short-upload-top h1{
-font-size:28px;
-}
-
-.short-jot{
-height:760px;
-}
+.button:hover{
+    background:#115e59;
 }
 </style>
 </head>
-
 <body>
-
-<header class="site-header">
-<a class="brand" href="index.html">
-<img class="logo-img" src="assets/logo.svg" alt="ESR Exchange">
-<span>ESR Exchange</span>
+<div class="container">
+<h1>ESR Exchange Upload Portal</h1>
+<p>Securely upload your inventory spreadsheets, pictures, PDFs, and ZIP files.</p>
+<a class="button" href="https://forms.fillout.com/t/7fwpesPPmGus" target="_blank">
+Secure Inventory Upload
 </a>
-
-<button class="menu-btn" onclick="toggleMenu()">Menu</button>
-
-<nav id="nav">
-<a href="index.html">Home</a>
-<a href="categories.html">Categories</a>
-<a class="active" href="upload.html">Upload Inventory</a>
-<a href="buyers.html">Buyer Match</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-
-<section class="short-upload-top">
-<h1>Upload Inventory</h1>
-<p>Send XLS/XLSX, photos, PDFs, ZIP files, and inventory details directly to ESR Exchange.</p>
-</section>
-
-<section class="short-upload-wrap">
-<div class="short-upload-card">
-
-<div class="short-top-bar">
-<strong>ESR Exchange Upload Portal</strong>
-<span class="secure">Secure Upload</span>
 </div>
-
-<iframe
-id="JotFormIFrame-261376036026049"
-class="short-jot"
-title="ESR Exchange Upload"
-src="https://form.jotform.com/261376036026049"
-allowfullscreen>
-</iframe>
-
-<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-<script>
-window.jotformEmbedHandler(
-"iframe[id='JotFormIFrame-261376036026049']",
-"https://form.jotform.com/"
-);
-</script>
-
-</div>
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
