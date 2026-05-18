@@ -1,5 +1,5 @@
 function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
-const emailTo='info@esrexchange.com';
+const emailTo='esrdavid@gmail.com.com';
 function enc(v){return encodeURIComponent(v||'')}
 function sendInventory(e){e.preventDefault();const s='Inventory submission for ESR Exchange';const b=`Company: ${company.value}
 Name: ${name.value}
