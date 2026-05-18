@@ -1,58 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESR Exchange - Upload Inventory</title>
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f7f6;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-.container{
-    background:white;
-    padding:60px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    max-width:600px;
-}
-h1{
-    color:#0f172a;
-    margin-bottom:15px;
-}
-p{
-    color:#475569;
-    margin-bottom:35px;
-    font-size:18px;
-}
-.button{
-    background:#0f766e;
-    color:white;
-    padding:18px 40px;
-    text-decoration:none;
-    border-radius:12px;
-    font-size:22px;
-    font-weight:bold;
-    display:inline-block;
-}
-.button:hover{
-    background:#115e59;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Upload Inventory | ESR Exchange</title>
+  <meta name="description" content="Upload inventory spreadsheets, pictures, PDFs and ZIP files directly to ESR Exchange.">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    UPLOADCARE_PUBLIC_KEY = "ceafcd8bc38d47a7f2c8";
+    UPLOADCARE_MULTIPLE = true;
+    UPLOADCARE_MULTIPLE_MAX = 50;
+    UPLOADCARE_TABS = "file camera url gdrive dropbox";
+    UPLOADCARE_IMAGES_ONLY = false;
+    UPLOADCARE_CLEARABLE = true;
+  </script>
+  <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+  <style>
+    .esr-upload-page {
+      background:#f4f0e6;
+      min-height:100vh;
+    }
+
+    .upload-hero {
+      background:linear-gradient(120deg,#102025,#06796e);
+      color:white;
+      padding:40px 7%;
+    }
+
+    .upload-hero h1 {
+      margin:0 0 10px;
+      font-size:44px;
+      line-height:1.05;
+    }
+
+    .upload-hero p {
+      margin:0;
+      max-width:850px;
+      font-size:18px;
+      line-height:1.45;
+      color:#e8f4f1;
+    }
+
+    .upload-shell {
+      padding:30px 7% 55px;
+    }
+
+    .upload-card {
+      max-width:980px;
+      margin:0 auto;
+      background:white;
+      border:1px solid #d8cdbb;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 18px 45px rgba(0,0,0,.12);
+    }
+
+    .upload-card-head {
+      padding:22px 26px;
+      background:#fffaf0;
+      border-bottom:1px solid #dfd2bd;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+    }
+
+    .upload-card-head h2 {
+      margin:0;
+      font-size:28px;
+      color:#102025;
+    }
+
+    .upload-card-head p {
+      margin:6px 0 0;
+      color:#405054;
+      line-height:1.35;
+    }
+
+    .secure-pill {
+      background:#06796e;
+      color:white;
+      border-radius:999px;
+      padding:9px 14px;
+      font-weight:900;
+      white-space:nowrap;
+      font-size:13px;
+    }
+
+    .upload-form {
+      padding:26px;
+      display:grid;
+      gap:16px;
+    }
+
+    .form-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .upload-form label {
+      display:block;
+      font-weight:900;
+      color:#102025;
+      margin-bottom:7px;
+    }
+
+    .upload-form input,
+    .upload-form select,
+    .upload-form textarea {
+      width:100%;
+      padding:14px;
+      border:1px solid #cdbfa8;
+      border-radius:12px;
+      font:inherit;
+      background:#fff;
+      color:#102025;
+    }
+
+    .upload-form textarea {
+      min-height:105px;
+      resize:vertical;
+    }
+
+    .uploader-box {
+      border:2px dashed #06796e;
+      background:#eef7f4;
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .uploader-box h3 {
+      margin:0 0 8px;
+      color:#102025;
+      font-size:22px;
+    }
+
+    .uploader-box p {
+      margin:0 0 16px;
+      color:#405054;
+      line-height:1.45;
+    }
+
+    .uploadcare--widget__button,
+    .uploadcare--widget__button_type_open {
+      background:#06796e !important;
+      border-color:#06796e !important;
+      color:white !important;
+      border-radius:10px !important;
+      font-weight:900 !important;
+      padding:12px 18px !important;
+      font-size:16px !important;
+    }
+
+    .file-links-box {
+      background:#fffaf0;
+      border:1px solid #dfd2bd;
+      border-radius:12px;
+      padding:14px;
+      color:#405054;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .submit-row {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:4px;
+    }
+
+    .submit-btn {
+      background:#06796e;
+      color:white;
+      border:0;
+      padding:16px 26px;
+      border-radius:12px;
+      font-size:18px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.14);
+    }
+
+    .submit-btn:hover {
+      background:#055f56;
+      transform:translateY(-1px);
+    }
+
+    .note {
+      color:#405054;
+      font-size:14px;
+    }
+
+    .success-message {
+      display:none;
+      margin:20px 26px 26px;
+      padding:20px;
+      border-radius:16px;
+      background:#e6f8f3;
+      border:1px solid #9bd8cb;
+      color:#075e55;
+      font-weight:900;
+    }
+
+    @media(max-width:900px){
+      .upload-hero {
+        padding:30px 6%;
+      }
+
+      .upload-hero h1 {
+        font-size:34px;
+      }
+
+      .upload-shell {
+        padding:20px 4% 40px;
+      }
+
+      .upload-card-head {
+        display:block;
+        padding:18px;
+      }
+
+      .secure-pill {
+        display:inline-block;
+        margin-top:12px;
+      }
+
+      .upload-form {
+        padding:18px;
+      }
+
+      .form-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
-<body>
-<div class="container">
-<h1>ESR Exchange Upload Portal</h1>
-<p>Securely upload your inventory spreadsheets, pictures, PDFs, and ZIP files.</p>
-<a class="button" href="https://forms.fillout.com/t/7fwpesPPmGus" target="_blank">
-Secure Inventory Upload
-</a>
-</div>
+
+<body class="esr-upload-page">
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="logo-img" src="assets/logo.svg" alt="ESR Exchange">
+    <span>ESR Exchange</span>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+  <nav id="nav">
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a class="active" href="upload.html">Upload Inventory</a>
+    <a href="buyers.html">Buyer Match</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="upload-hero">
+  <h1>Upload Inventory</h1>
+  <p>Submit spreadsheets, photos, PDFs, ZIP files, and equipment details directly to ESR Exchange. Your files are uploaded securely and sent as download links.</p>
+</section>
+
+<section class="upload-shell">
+  <div class="upload-card">
+    <div class="upload-card-head">
+      <div>
+        <h2>ESR Exchange Secure Upload Portal</h2>
+        <p>Servers • GPUs • Memory • Networking • Storage • Telecom • Scrap</p>
+      </div>
+      <span class="secure-pill">Powered by Uploadcare</span>
+    </div>
+
+    <form id="esrUploadForm" class="upload-form">
+      <input type="hidden" name="access_key" value="fef15f69-56fd-4a20-8ece-3a903fd0de75">
+      <input type="hidden" name="subject" value="New ESR Exchange Inventory Upload">
+      <input type="hidden" name="from_name" value="ESR Exchange Upload Portal">
+      <input type="hidden" name="file_links" id="fileLinks">
+
+      <div class="form-grid">
+        <div>
+          <label for="company">Company Name</label>
+          <input id="company" name="company" autocomplete="organization" required>
+        </div>
+        <div>
+          <label for="contact">Contact Name</label>
+          <input id="contact" name="contact_name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone / WhatsApp</label>
+          <input id="phone" name="phone" autocomplete="tel">
+        </div>
+      </div>
+
+      <div>
+        <label for="category">Equipment Category</label>
+        <select id="category" name="category">
+          <option value="">Select category</option>
+          <option>Servers</option>
+          <option>GPUs / AI Hardware</option>
+          <option>Memory / RAM</option>
+          <option>Networking</option>
+          <option>Storage / Drives</option>
+          <option>Cables / Optics</option>
+          <option>Telecom</option>
+          <option>Electronic Scrap</option>
+          <option>Mixed IT Equipment</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="notes">Notes / Cloud Link</label>
+        <textarea id="notes" name="notes" placeholder="Optional: paste Google Drive, Dropbox or WeTransfer links, location, timeline, or comments."></textarea>
+      </div>
+
+      <div class="uploader-box">
+        <h3>Upload Files</h3>
+        <p>Upload XLS, XLSX, CSV, PDF, ZIP, JPG, PNG, and multiple equipment photos. You can upload spreadsheets and pictures together.</p>
+
+        <input
+          type="hidden"
+          role="uploadcare-uploader"
+          name="uploadcare_files"
+          data-public-key="ceafcd8bc38d47a7f2c8"
+          data-multiple="true"
+          data-multiple-max="50"
+          data-clearable="true"
+          data-tabs="file camera url gdrive dropbox"
+        >
+
+        <div class="file-links-box" id="fileStatus">
+          No files uploaded yet. Click the upload button and select your inventory files/photos.
+        </div>
+      </div>
+
+      <div class="submit-row">
+        <button class="submit-btn" type="submit">Submit Inventory Securely</button>
+        <span class="note">After upload, ESR Exchange receives your details and file download links.</span>
+      </div>
+    </form>
+
+    <div id="successMessage" class="success-message">
+      Thank you. ESR Exchange received your inventory submission.
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script>
+  const form = document.getElementById("esrUploadForm");
+  const fileLinks = document.getElementById("fileLinks");
+  const fileStatus = document.getElementById("fileStatus");
+  const successMessage = document.getElementById("successMessage");
+
+  let uploadedLinks = [];
+
+  function updateFileStatus() {
+    if (!uploadedLinks.length) {
+      fileStatus.textContent = "No files uploaded yet. Click the upload button and select your inventory files/photos.";
+      fileLinks.value = "";
+      return;
+    }
+
+    fileLinks.value = uploadedLinks.join("\n");
+    fileStatus.innerHTML = "<strong>Uploaded file links:</strong><br>" + uploadedLinks.map(link => {
+      return '<a href="' + link + '" target="_blank">' + link + '</a>';
+    }).join("<br>");
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const uploaderInput = document.querySelector("input[role=uploadcare-uploader]");
+    const widget = uploadcare.Widget(uploaderInput);
+
+    widget.onUploadComplete(function(info) {
+      uploadedLinks = [];
+
+      if (info.files && Array.isArray(info.files)) {
+        info.files.forEach(function(file) {
+          if (file.cdnUrl) uploadedLinks.push(file.cdnUrl);
+        });
+      }
+
+      if (info.cdnUrl) {
+        uploadedLinks.push(info.cdnUrl);
+      }
+
+      updateFileStatus();
+    });
+  });
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    if (!uploadedLinks.length) {
+      const ok = confirm("No files are uploaded yet. Submit the form without files?");
+      if (!ok) return;
+    }
+
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        form.style.display = "none";
+        successMessage.style.display = "block";
+        window.scrollTo({top:0, behavior:"smooth"});
+      } else {
+        alert("There was a problem sending the form. Please try again.");
+      }
+    } catch (err) {
+      alert("There was a problem sending the form. Please try again.");
+    }
+  });
+</script>
 </body>
 </html>
