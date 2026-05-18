@@ -28,34 +28,28 @@ async function submitFormData(form, successMessage){
   }
 }
 
-function sendInventory(e){
-  if(e) e.preventDefault();
-  const form = document.getElementById("inventory-form");
-  if(!form) return;
-  submitFormData(form,"Thank you. Your inventory and files were submitted successfully.");
-}
-
-function sendBuyerMatch(e){
-  if(e) e.preventDefault();
-  const form = document.getElementById("buyer-match-form");
-  if(!form) return;
-  submitFormData(form,"Thank you. Your buyer match request was submitted successfully.");
-}
-
-function sendContact(e){
-  if(e) e.preventDefault();
-  const form = document.getElementById("contact-form");
-  if(!form) return;
-  submitFormData(form,"Thank you for your message. We will contact you shortly.");
-}
-
 document.addEventListener("DOMContentLoaded",function(){
   const inventoryForm = document.getElementById("inventory-form");
-  if(inventoryForm) inventoryForm.addEventListener("submit",sendInventory);
+  if(inventoryForm){
+    inventoryForm.addEventListener("submit",function(e){
+      e.preventDefault();
+      submitFormData(inventoryForm,"Thank you. Your inventory was submitted successfully.");
+    });
+  }
 
   const buyerForm = document.getElementById("buyer-match-form");
-  if(buyerForm) buyerForm.addEventListener("submit",sendBuyerMatch);
+  if(buyerForm){
+    buyerForm.addEventListener("submit",function(e){
+      e.preventDefault();
+      submitFormData(buyerForm,"Thank you. Your buyer match request was submitted successfully.");
+    });
+  }
 
   const contactForm = document.getElementById("contact-form");
-  if(contactForm) contactForm.addEventListener("submit",sendContact);
+  if(contactForm){
+    contactForm.addEventListener("submit",function(e){
+      e.preventDefault();
+      submitFormData(contactForm,"Thank you for your message. We will contact you shortly.");
+    });
+  }
 });

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sell Used IT Equipment | ESR Exchange</title>
-  <meta name="description" content="Upload Excel inventory lists, CSV files, photos, and equipment details to sell used servers, GPUs, RAM, networking, storage and electronic scrap.">
+  <meta name="description" content="Upload inventory details, Excel files, photos links and equipment lists to sell used servers, GPUs, RAM, networking, storage and electronic scrap.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   <nav id="nav">
     <a href="index.html">Home</a>
     <a href="categories.html">Categories</a>
-    <a href="sell.html">Sell Equipment</a>
+    <a class="active" href="sell.html">Sell Equipment</a>
     <a href="buyers.html">Buyer Match</a>
     <a href="recycling.html">Recycling</a>
     <a href="about.html">About Us</a>
@@ -27,14 +27,15 @@
 
 <section class="page-hero">
   <div class="eyebrow">Sell Equipment</div>
-  <h1>Upload your inventory, Excel file, and photos.</h1>
-  <p class="lead">Send your spreadsheet, pictures, and equipment details. ESR Exchange will review the material and help route it for resale, buyer matching, recovery, or recycling.</p>
+  <h1>Send inventory, files, and photos.</h1>
+  <p class="lead">Upload one small file directly, or paste a Google Drive, Dropbox, or WeTransfer link for large files and multiple photos.</p>
 </section>
 
 <section class="section form-section">
   <form id="inventory-form" enctype="multipart/form-data">
-    <input type="hidden" name="subject" value="Inventory Submission with Files - ESR Exchange">
+    <input type="hidden" name="subject" value="Inventory Submission - ESR Exchange">
     <input type="hidden" name="from_name" value="ESR Exchange Website">
+    <input type="hidden" name="form_type" value="Upload Inventory">
 
     <input name="company" id="company" placeholder="Company name">
     <input name="name" id="name" placeholder="Your name">
@@ -58,27 +59,27 @@
     <textarea name="inventory_details" id="items" placeholder="Paste inventory list, part numbers, quantities, condition, location, and notes" required></textarea>
 
     <label class="file-label">
-      Upload Excel / CSV inventory file
-      <input name="inventory_file" type="file" accept=".xls,.xlsx,.csv,.txt,.pdf">
+      Attach one small file only — XLS, CSV, PDF, TXT, ZIP, or one picture under 5 MB
+      <input name="attachment" type="file" accept=".xls,.xlsx,.csv,.txt,.pdf,.zip,image/*">
     </label>
 
-    <label class="file-label">
-      Upload equipment photos
-      <input name="equipment_photos" type="file" accept="image/*,.pdf" multiple>
-    </label>
+    <input name="file_link" id="file-link" placeholder="Google Drive / Dropbox / WeTransfer link for multiple pictures or large files">
 
-    <p class="form-note">You can upload Excel, CSV, PDF, and photos. If the file is very large, use Dropbox, Google Drive, or WeTransfer and paste the link in the notes box.</p>
+    <p class="form-note">
+      Important: for many photos, put all photos into one ZIP file and upload the ZIP if it is under 5 MB.
+      If the files are larger, upload to Google Drive, Dropbox, or WeTransfer and paste the link above.
+    </p>
 
-    <button class="primary" type="submit">Send Inventory & Files</button>
+    <button class="primary" type="submit">Send Inventory</button>
   </form>
 </section>
 
 <section class="section">
-  <h2>What to upload</h2>
+  <h2>Best way to send photos and XLS files</h2>
   <div class="grid3">
-    <div class="card"><h3>Excel / CSV list</h3><p>Part numbers, descriptions, brands, quantities, condition, and location.</p></div>
-    <div class="card"><h3>Equipment photos</h3><p>Photos of pallets, racks, labels, boxes, mixed lots, and serial/model tags.</p></div>
-    <div class="card"><h3>Lot details</h3><p>Tell us if the equipment is boxed, palletized, installed, loose, tested, or scrap.</p></div>
+    <div class="card"><h3>Small XLS/CSV</h3><p>Attach one spreadsheet directly if it is under 5 MB.</p></div>
+    <div class="card"><h3>Multiple photos</h3><p>Put all photos into one ZIP file, or upload them to Google Drive and paste the link.</p></div>
+    <div class="card"><h3>Large inventory</h3><p>Use Dropbox, Google Drive, or WeTransfer for large files and folders.</p></div>
   </div>
 </section>
 
