@@ -1,95 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sell Used IT Equipment | ESR Exchange</title>
-  <meta name="description" content="Upload inventory details, Excel files, photos links and equipment lists to sell used servers, GPUs, RAM, networking, storage and electronic scrap.">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESR Exchange - Upload Inventory</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    background:#f5f5f5;
+}
+
+.upload-section{
+    padding:40px 20px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#1f3f3f;
+}
+
+p{
+    color:#555;
+}
+</style>
+
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img class="logo-img" src="assets/logo.svg" alt="ESR Exchange Logo">
-    <span>ESR Exchange</span>
-  </a>
-  <button class="menu-btn" onclick="toggleMenu()">Menu</button>
-  <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
-    <a class="active" href="sell.html">Sell Equipment</a>
-    <a href="buyers.html">Buyer Match</a>
-    <a href="recycling.html">Recycling</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
 
-<section class="page-hero">
-  <div class="eyebrow">Sell Equipment</div>
-  <h1>Send inventory, files, and photos.</h1>
-  <p class="lead">Upload one small file directly, or paste a Google Drive, Dropbox, or WeTransfer link for large files and multiple photos.</p>
-</section>
+<section class="upload-section">
+  <div class="container">
 
-<section class="section form-section">
-  <form id="inventory-form" enctype="multipart/form-data">
-    <input type="hidden" name="subject" value="Inventory Submission - ESR Exchange">
-    <input type="hidden" name="from_name" value="ESR Exchange Website">
-    <input type="hidden" name="form_type" value="Upload Inventory">
+    <h1>Upload Inventory</h1>
+    <p>Send your inventory, pictures, XLS files, or ZIP files directly.</p>
 
-    <input name="company" id="company" placeholder="Company name">
-    <input name="name" id="name" placeholder="Your name">
-    <input name="email" id="email" type="email" placeholder="Email address" required>
-    <input name="phone" id="phone" placeholder="Phone / WhatsApp">
+    <iframe
+      id="JotFormIFrame-261376036026049"
+      title="ESR Exchange - Upload Inventory"
+      allowtransparency="true"
+      allow="geolocation; microphone; camera; fullscreen"
+      src="https://form.jotform.com/261376036026049"
+      frameborder="0"
+      style="min-width:100%;max-width:100%;height:900px;border:none;"
+      scrolling="no">
+    </iframe>
 
-    <select name="category" id="category">
-      <option value="">Select main category</option>
-      <option>Servers</option>
-      <option>GPUs / AI Hardware</option>
-      <option>Memory / RAM</option>
-      <option>Networking</option>
-      <option>Storage</option>
-      <option>Cables / Optics</option>
-      <option>Processors / CPUs</option>
-      <option>Telecom</option>
-      <option>Electronic Scrap</option>
-      <option>Mixed IT Equipment</option>
-    </select>
+    <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+    <script>
+      window.jotformEmbedHandler(
+        "iframe[id='JotFormIFrame-261376036026049']",
+        "https://form.jotform.com/"
+      );
+    </script>
 
-    <textarea name="inventory_details" id="items" placeholder="Paste inventory list, part numbers, quantities, condition, location, and notes" required></textarea>
-
-    <label class="file-label">
-      Attach one small file only — XLS, CSV, PDF, TXT, ZIP, or one picture under 5 MB
-      <input name="attachment" type="file" accept=".xls,.xlsx,.csv,.txt,.pdf,.zip,image/*">
-    </label>
-
-    <input name="file_link" id="file-link" placeholder="Google Drive / Dropbox / WeTransfer link for multiple pictures or large files">
-
-    <p class="form-note">
-      Important: for many photos, put all photos into one ZIP file and upload the ZIP if it is under 5 MB.
-      If the files are larger, upload to Google Drive, Dropbox, or WeTransfer and paste the link above.
-    </p>
-
-    <button class="primary" type="submit">Send Inventory</button>
-  </form>
-</section>
-
-<section class="section">
-  <h2>Best way to send photos and XLS files</h2>
-  <div class="grid3">
-    <div class="card"><h3>Small XLS/CSV</h3><p>Attach one spreadsheet directly if it is under 5 MB.</p></div>
-    <div class="card"><h3>Multiple photos</h3><p>Put all photos into one ZIP file, or upload them to Google Drive and paste the link.</p></div>
-    <div class="card"><h3>Large inventory</h3><p>Use Dropbox, Google Drive, or WeTransfer for large files and folders.</p></div>
   </div>
 </section>
 
-<a class="whatsapp-float" href="https://wa.me/17135550199?text=Hello%20ESR%20Exchange%2C%20I%20want%20to%20send%20inventory." aria-label="WhatsApp ESR Exchange">WhatsApp</a>
-
-<footer>
-  <div><strong>ESR Exchange</strong><br>Enterprise IT resale, recovery, and recycling marketplace.</div>
-  <div><a href="contact.html">Contact ESR Exchange</a></div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
