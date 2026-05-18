@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ESR Exchange | Upload Inventory</title>
+  <meta name="description" content="ESR Exchange helps companies sell surplus IT equipment, servers, RAM, GPUs, networking gear, storage, cables and electronic scrap.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html"><img class="logo-img" src="assets/logo.svg" alt="ESR Exchange"><span>ESR Exchange</span></a>
+  <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+  <nav id="nav"><a class="" href="index.html">Home</a>
+<a class="" href="categories.html">Categories</a>
+<a class="active" href="upload.html">Upload Inventory</a>
+<a class="" href="buyers.html">Buyer Match</a>
+<a class="" href="about.html">About Us</a>
+<a class="" href="contact.html">Contact</a></nav>
+</header>
+
+<section class="page-hero">
+  <div class="eyebrow">Upload Inventory</div>
+  <h1>Send your inventory list.</h1>
+  <p class="lead">Paste your inventory details below. Include part numbers, brands, quantities, condition, location, and any notes.</p>
+</section>
+<section class="section form-section">
+  <form id="inventory-form">
+    <input id="company" placeholder="Company name">
+    <input id="name" placeholder="Your name">
+    <input id="email" type="email" placeholder="Email address" required>
+    <input id="phone" placeholder="Phone / WhatsApp">
+    <textarea id="items" placeholder="Paste inventory list, part numbers, quantities, or lot description" required></textarea>
+    <button class="primary" type="submit">Send Inventory Details</button>
+  </form>
+</section>
+<footer>
+  <div><strong>ESR Exchange</strong><br>Enterprise IT resale, recovery, and recycling marketplace.</div>
+  <div><a href="contact.html">Contact ESR Exchange</a></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
