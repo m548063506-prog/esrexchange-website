@@ -12,8 +12,35 @@ Email: ${document.getElementById('bm-email').value}
 
 Items:
 ${document.getElementById('bm-items').value}`;location.href=`mailto:${emailTo}?subject=${enc(s)}&body=${enc(b)}`}
-function sendContact(e){e.preventDefault();const s='ESR Exchange Contact Request';const b=`Name: ${document.getElementById('contact-name').value}
-Email: ${document.getElementById('contact-email').value}
+function async function sendContact(e){
+ e.preventDefault();
 
-Message:
-${document.getElementById('contact-message').value}`;location.href=`mailto:${emailTo}?subject=${enc(s)}&body=${enc(b)}`}
+ const name = document.getElementById('contact-name').value;
+ const email = document.getElementById('contact-email').value;
+ const message = document.getElementById('contact-message').value;
+
+ try {
+   const response = await fetch('https://formsubmit.co/ajax/info@esrexchange.com', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
+     },
+     body: JSON.stringify({
+       name: name,
+       email: email,
+       message: message
+     })
+   });
+
+   if(response.ok){
+     alert('Message sent successfully!');
+     window.location.href = '/';
+   } else {
+     alert('Failed to send message.');
+   }
+
+ } catch(error){
+   alert('Error sending message.');
+ }
+}
