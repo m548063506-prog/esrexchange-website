@@ -180,3 +180,14 @@ function closeRealCategory(){
 }
 
 document.addEventListener("DOMContentLoaded", addRealCategorySection);
+function openRealCategory(category) {
+  const section = document.getElementById(category + '-gallery');
+
+  if (section) {
+    section.style.display = 'block';
+    section.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+}
+
