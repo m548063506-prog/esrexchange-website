@@ -34,8 +34,10 @@ function async function sendContact(e){
    });
 
    if(response.ok){
-     alert('Message sent successfully!');
-     window.location.href = '/';
+     alert('Thank you for your infomation.
+     setTimeout(() => {
+  window.location.href = '/';
+}, 1500);
    } else {
      alert('Failed to send message.');
    }
