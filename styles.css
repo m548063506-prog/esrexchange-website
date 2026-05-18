@@ -63,3 +63,36 @@ footer a{color:#fff;text-decoration:underline}
   .stats div{border-right:0;border-bottom:1px solid #d8cdbb}
   footer{display:block}
 }
+
+/* REAL CATEGORY BUTTONS */
+.chips a{
+  background:#ffffff;
+  border:2px solid #06796e;
+  border-radius:999px;
+  padding:14px 20px;
+  font-weight:800;
+  display:inline-block;
+  text-decoration:none;
+  color:#06796e;
+  transition:.2s;
+  box-shadow:0 6px 16px rgba(0,0,0,.08);
+}
+
+.chips a:hover{
+  background:#06796e;
+  color:#ffffff;
+  transform:translateY(-2px);
+}
+
+/* MOBILE HEADER FIX */
+@media(max-width:900px){
+  .brand span{
+    display:none;
+  }
+}
+
+/* BACK BUTTON */
+.back-link{
+  display:inline-block;
+  margin-bottom:24px;
+}
