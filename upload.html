@@ -1,256 +1,109 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Upload Inventory | ESR Exchange</title>
-<meta name="description" content="Upload XLS files, pictures, ZIP files, PDFs and inventory details to ESR Exchange for enterprise IT resale, recovery and buyer matching.">
-<link rel="stylesheet" href="styles.css">
+<title>ESR Exchange Upload</title>
 <style>
-.upload-hero{
-  background:linear-gradient(120deg,#102025,#06796e);
-  color:#fff;
-  padding:70px 7%;
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f3efe6;
+color:#222;
 }
-.upload-hero h1{
-  font-size:56px;
-  line-height:1;
-  margin:15px 0;
+.header{
+background:#fff;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #ddd;
 }
-.upload-hero p{
-  font-size:20px;
-  max-width:850px;
-  line-height:1.45;
-  color:#e8f4f1;
+.header h1{
+margin:0;
+font-size:30px;
 }
-.upload-badges{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:25px;
+.hero{
+background:#0b6b62;
+color:#fff;
+padding:35px 5%;
 }
-.upload-badges span{
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.28);
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:800;
+.hero h2{
+margin:0;
+font-size:42px;
 }
-.upload-layout{
-  display:grid;
-  grid-template-columns:340px 1fr;
-  gap:28px;
-  padding:50px 7%;
-  background:#f4f0e6;
+.hero p{
+max-width:700px;
+font-size:18px;
+line-height:1.5;
 }
-.upload-sidebar{
-  display:grid;
-  gap:18px;
-  align-content:start;
+.main{
+padding:30px 5%;
 }
-.portal-card{
-  background:#fff;
-  border:1px solid #d8cdbb;
-  border-radius:22px;
-  padding:24px;
-  box-shadow:0 14px 35px rgba(0,0,0,.08);
+.form-box{
+background:#fff;
+border-radius:18px;
+padding:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
-.portal-card h3{
-  margin:0 0 12px;
-  font-size:22px;
+iframe{
+width:100%;
+height:850px;
+border:none;
+border-radius:12px;
 }
-.portal-card p,.portal-card li{
-  color:#405054;
-  line-height:1.5;
-}
-.portal-card ul{
-  padding-left:20px;
-}
-.portal-icon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  background:#e8f4f1;
-  color:#06796e;
-  font-size:26px;
-  font-weight:900;
-  margin-bottom:12px;
-}
-.form-frame-card{
-  background:#fff;
-  border:1px solid #d8cdbb;
-  border-radius:26px;
-  padding:20px;
-  box-shadow:0 20px 50px rgba(0,0,0,.12);
-  overflow:hidden;
-}
-.form-frame-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  border-bottom:1px solid #e2d6c1;
-  padding:8px 8px 18px;
-  margin-bottom:18px;
-}
-.form-frame-title h2{
-  margin:0;
-  font-size:28px;
-}
-.form-frame-title span{
-  background:#06796e;
-  color:#fff;
-  border-radius:999px;
-  padding:9px 13px;
-  font-weight:900;
-  font-size:13px;
-}
-.jotform-wrap{
-  border-radius:18px;
-  overflow:hidden;
-  background:#eef7f4;
-}
-#JotFormIFrame-261376036026049{
-  width:100%;
-  min-width:100%;
-  max-width:100%;
-  height:1100px;
-  border:0;
-}
-.upload-footer-note{
-  padding:18px;
-  color:#405054;
-  font-size:14px;
-  background:#fffaf0;
-  border-top:1px solid #e2d6c1;
-}
-.quick-actions{
-  display:grid;
-  gap:12px;
-}
-.quick-actions a{
-  display:block;
-  text-align:center;
+.note{
+margin-top:15px;
+font-size:14px;
+color:#555;
 }
 @media(max-width:900px){
-  .upload-hero{padding:45px 6%;}
-  .upload-hero h1{font-size:40px;}
-  .upload-layout{grid-template-columns:1fr;padding:35px 6%;}
-  .form-frame-title{display:block;}
-  .form-frame-title span{display:inline-block;margin-top:12px;}
-  #JotFormIFrame-261376036026049{height:1250px;}
+.hero h2{
+font-size:32px;
+}
+iframe{
+height:1050px;
+}
 }
 </style>
 </head>
 <body>
 
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img class="logo-img" src="assets/logo.svg" alt="ESR Exchange Logo">
-    <span>ESR Exchange</span>
-  </a>
-  <button class="menu-btn" onclick="toggleMenu()">Menu</button>
-  <nav id="nav">
-    <a href="index.html">Home</a>
-    <a href="categories.html">Categories</a>
-    <a class="active" href="upload.html">Upload Inventory</a>
-    <a href="buyers.html">Buyer Match</a>
-    <a href="recycling.html">Recycling</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+<div class="header">
+<h1>ESR Exchange</h1>
+<div>Upload Portal</div>
+</div>
 
-<section class="upload-hero">
-  <div class="eyebrow">Secure Inventory Upload Portal</div>
-  <h1>Send your IT equipment list, photos, and files.</h1>
-  <p>Use this portal to submit enterprise servers, GPUs, memory, networking equipment, storage, cables, telecom equipment, electronic scrap, and full data center liquidation lots.</p>
-  <div class="upload-badges">
-    <span>XLS / XLSX</span>
-    <span>CSV</span>
-    <span>Pictures</span>
-    <span>PDF</span>
-    <span>ZIP Files</span>
-    <span>Google Drive Links</span>
-  </div>
-</section>
+<div class="hero">
+<h2>Upload Your Inventory</h2>
+<p>Send XLS files, photos, PDFs, ZIP folders, and equipment lists directly to ESR Exchange.</p>
+</div>
 
-<section class="upload-layout">
-  <aside class="upload-sidebar">
-    <div class="portal-card">
-      <div class="portal-icon">1</div>
-      <h3>Upload inventory</h3>
-      <p>Send Excel files, photos, ZIP folders, PDFs, or paste a Drive/Dropbox/WeTransfer link.</p>
-    </div>
+<div class="main">
+<div class="form-box">
 
-    <div class="portal-card">
-      <div class="portal-icon">2</div>
-      <h3>What to include</h3>
-      <ul>
-        <li>Part numbers and model numbers</li>
-        <li>Quantities and condition</li>
-        <li>Photos of labels, pallets, racks, and boxes</li>
-        <li>Location and timeline</li>
-      </ul>
-    </div>
+<iframe
+id="JotFormIFrame-261376036026049"
+title="ESR Exchange Upload"
+src="https://form.jotform.com/261376036026049"
+allowfullscreen>
+</iframe>
 
-    <div class="portal-card">
-      <div class="portal-icon">3</div>
-      <h3>ESR review</h3>
-      <p>ESR Exchange reviews the material for buyer matching, resale, recovery, or electronics recycling options.</p>
-    </div>
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>
+window.jotformEmbedHandler(
+"iframe[id='JotFormIFrame-261376036026049']",
+"https://form.jotform.com/"
+);
+</script>
 
-    <div class="portal-card quick-actions">
-      <h3>Need help?</h3>
-      <a class="primary" href="contact.html">Contact ESR Exchange</a>
-      <a class="secondary" href="buyers.html">Buyer Request Form</a>
-    </div>
-  </aside>
+<div class="note">
+Large files can also be sent using Google Drive, Dropbox, or WeTransfer links inside the form.
+</div>
 
-  <main class="form-frame-card">
-    <div class="form-frame-title">
-      <div>
-        <h2>Inventory Submission Form</h2>
-        <p style="margin:8px 0 0;color:#405054;">Attach files or paste a cloud link. Large uploads are supported through the form.</p>
-      </div>
-      <span>Secure Submission</span>
-    </div>
+</div>
+</div>
 
-    <div class="jotform-wrap">
-      <iframe
-        id="JotFormIFrame-261376036026049"
-        title="ESR Exchange - Upload Inventory"
-        allowtransparency="true"
-        allow="geolocation; microphone; camera; fullscreen"
-        src="https://form.jotform.com/261376036026049"
-        frameborder="0"
-        scrolling="no">
-      </iframe>
-
-      <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-      <script>
-        window.jotformEmbedHandler(
-          "iframe[id='JotFormIFrame-261376036026049']",
-          "https://form.jotform.com/"
-        );
-      </script>
-
-      <div class="upload-footer-note">
-        For very large folders, upload to Google Drive, Dropbox, or WeTransfer and paste the link inside the form.
-      </div>
-    </div>
-  </main>
-</section>
-
-<a class="whatsapp-float" href="https://wa.me/17135550199?text=Hello%20ESR%20Exchange%2C%20I%20want%20to%20send%20inventory." aria-label="WhatsApp ESR Exchange">WhatsApp</a>
-
-<footer>
-  <div><strong>ESR Exchange</strong><br>Enterprise IT resale, recovery, buyer matching, and electronics recycling.</div>
-  <div><a href="contact.html">Contact ESR Exchange</a></div>
-</footer>
-
-<script src="script.js"></script>
 </body>
 </html>
